@@ -1,27 +1,60 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import '../components/Sidebar/Sidebar.css';
+@import '../components/MainBody/MainBody.css';
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --primary-color: rgb(117, 81, 216);
+  --primary-theme: rgb(19, 20, 22);
+  --primary-aside: rgb(29, 30, 34);
+  --primary-text: rgb(255, 255, 255);
+  --emphasize-color: rgb(25, 110, 237);
+  --emphasize-hover-color: #155ec9;
+  --scrollbar-track: #3b3b46;
+  --scrollbar-thumb: #4c4c6b;
+  --scrollbar-focus: #45455252;
+  --opacity-text: #cdcdde;
+  --blur-text: #5b5b6a;
+
+  --width-sidebar: 280px;
+
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* 
+rule:
+_wrapper -> _container
+BEM: block-element_modifier
+*/
+
+html {
+  font-size: 62.5%;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: OpenSans-light;
+}
+
+/* font embedded */
+
+@font-face {
+  font-family: OpenSans-light;
+  src: url('/fonts/OpenSans-Light.ttf');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: OpenSans-medium ;
+  src: url('/fonts/OpenSans-Medium.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: OpenSans-bold;
+  src: url('/fonts/OpenSans-Bold.ttf');
+  font-weight: 500;
 }

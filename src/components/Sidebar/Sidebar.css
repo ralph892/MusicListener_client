@@ -1,0 +1,114 @@
+@layer components {
+    .sidebar-wrapper{
+        @apply flex flex-col fixed;
+
+
+        width: var(--width-sidebar);
+        background-color: var(--primary-aside);
+        max-height: 100vh;
+
+        ::-webkit-scrollbar{
+            width: 4px;
+            display: none;
+        }
+
+        &:hover ::-webkit-scrollbar{
+            width: 4px;
+            display: block;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--scrollbar-track); 
+            border-radius: 8px;
+        }
+
+        ::-webkit-scrollbar-track:hover {
+            background: var(--scrollbar-focus);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--scrollbar-thumb); 
+            border-radius: 8px;
+        }
+    }
+
+    /* heading */
+    .sidebar-heading{
+        @apply flex w-full justify-between items-center;
+        padding: 24px 16px 48px;
+        width: 280px;
+        height: 116px;
+    }
+
+    .heading-icon{
+        color: var(--primary-text);
+        font-size: 2.4rem;
+    }
+
+    /* list */
+    .sidebar-list{
+        @apply w-full;
+        overflow-y: auto;
+
+        .list-wrapper{
+            width: 100%;
+            font-size: 1.4rem;
+            font-family: OpenSans-medium;
+
+
+            .list-item-heading{
+                color: var(--blur-text);
+                padding: 24px 24px 16px;
+
+            }
+
+            .list-item-wrapper{
+                @apply flex;
+
+                color: var(--opacity-text);
+                padding: 10px 24px;
+                cursor: pointer;
+
+                .list-item{
+                    display: flex;
+
+                    .item-icon{
+                        font-size: 2rem;
+                        margin-right: 16px;
+                    }
+                }
+            }
+        }
+    }
+
+    /* footer */
+    .sidebar-footer{
+        padding: 32px 24px 16px;
+
+        .sidebar-btn{
+            color: var(--primary-text);
+            background-color: var(--emphasize-color);
+            font-family: OpenSans-medium;
+            font-size: 1.4rem;
+
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            padding: 7px 15px;
+            border-radius: 6px;
+    
+            &:hover{
+                background-color: var(--emphasize-hover-color);
+            }
+
+            .btn-icon{
+                font-size: 2.4rem;
+                margin-right: 4px;
+            }
+        }
+    }
+
+}
+
+
