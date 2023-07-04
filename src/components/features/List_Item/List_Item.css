@@ -1,0 +1,58 @@
+@layer components {
+    .list_item{
+        @apply w-full flex items-center;
+        height: 80px;
+        padding: 8px;
+        border-radius: var(--border-radius-8p);
+
+        .item_image{
+            width: 64px;
+            height: 64px;
+            border-radius: var(--border-radius-img);
+        }
+
+        .list_item_content{
+            @apply flex flex-col;
+            margin-left: 16px;
+            color: var(--primary-text);
+            flex-grow: 1;
+            cursor: pointer;
+
+            .item_content_title{
+                margin-top: 2px;
+                font-size: 1.4rem;
+                font-family: OpenSans-medium;
+            }
+
+            .item_content_subtitle{
+                font-size: 1.3rem;
+                font-family: OpenSans-medium;
+                color: var(--blur-text);
+            }
+        }
+
+        .list_item_option{
+            @apply flex items-center;
+            font-size: 2.4rem;
+            gap: 14px;
+
+            .item_option_btn{
+                color: var(--blur-btn);
+            }
+        }
+
+        &:hover{
+            background-color: var(--primary-aside);
+        }
+    }
+
+    .list_item::before{
+        counter-increment: list-order;
+        content: counter(list-order);
+        font-size: 1.6rem;
+        font-family: OpenSans-medium;
+        width: 4rem;
+        padding-left: 0.8rem;
+        color: var(--blur-btn);
+    }
+}

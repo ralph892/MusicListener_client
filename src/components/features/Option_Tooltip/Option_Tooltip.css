@@ -1,0 +1,35 @@
+@layer components {
+    .option_tooltip_wrapper{
+        position: absolute;
+        top: 24px;
+        right: 0;
+        z-index: 10;
+
+
+        font-size: 1.3rem;
+        font-family: OpenSans-medium;
+        background-color: var(--primary-aside);
+        color: #92929f;
+        border-radius: 6px;
+        min-width: 128px;
+
+    }
+
+    .option_tooltip{
+        padding: 8px 0;
+
+        .option_tooltip_item{
+            padding: 4px 16px;
+            white-space: nowrap;
+        }
+
+
+        .option_tooltip_divide{
+            @apply w-full;
+            content: '';
+            height: 2px;
+            background-color: var(--tooltip-divide);
+            margin: 8px 0;
+        }
+    }
+}

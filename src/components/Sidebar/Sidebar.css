@@ -7,28 +7,9 @@
         background-color: var(--primary-aside);
         max-height: 100vh;
 
-        ::-webkit-scrollbar{
-            width: 4px;
-            display: none;
-        }
-
         &:hover ::-webkit-scrollbar{
             width: 4px;
             display: block;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--scrollbar-track); 
-            border-radius: 8px;
-        }
-
-        ::-webkit-scrollbar-track:hover {
-            background: var(--scrollbar-focus);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--scrollbar-thumb); 
-            border-radius: 8px;
         }
     }
 
@@ -96,7 +77,7 @@
             justify-content: center;
             align-items: center;
             padding: 7px 15px;
-            border-radius: 6px;
+            border-radius: var(--border-radius-btn);
     
             &:hover{
                 background-color: var(--emphasize-hover-color);

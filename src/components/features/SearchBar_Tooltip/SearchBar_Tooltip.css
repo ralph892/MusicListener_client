@@ -1,0 +1,113 @@
+@layer components {
+    .searchBar_tooltip_wrapper{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        
+        width: 100%;
+        max-height: 320px;
+    }
+
+    .searchBar_tooltip{
+        width: 100%;
+        height: 100%;
+        margin-top: 8px;
+
+        background-color: var(--primary-theme);
+        border-radius: 16px;
+        box-shadow:  1px 1rem 0 rgba(0, 0, 0, .1);
+
+
+        .tooltip_heading{
+            @apply w-full;
+            z-index: 1000;
+            padding: 12px 24px;
+            box-shadow: 0 1px 1rem 0 rgba(0, 0, 0, .1);
+            border-bottom: 1px solid #202026;
+        }
+
+        .heading_btn_wrapper{
+            @apply flex w-full h-full;
+            flex-wrap: wrap;
+            margin: 0 -4px;
+            font-size: 1.4rem;
+            font-family: OpenSans-medium;
+
+
+            .heading_btn{
+                margin: 4px;
+                padding: 5px 11px;
+                height: 100%;
+
+                border: 1px solid transparent;
+                border-radius: 4px;
+                background-color: var(--tooltip-btn-color);
+                color: var(--emphasize-color);
+
+                font-size: 1.3rem;
+                font-family: OpenSans-medium;
+                line-height: 2rem;
+
+                &:hover{
+                    border: 1px solid var(--emphasize-color);
+                }
+            }
+        }
+
+        .tooltip_sections_wrapper{
+            margin-right: 4px;
+            padding: 16px 24px;
+            width: 100%;
+            height: 100%;
+            max-height: 240px;
+            overflow-y: overlay; 
+        }
+
+        .tooltip_section{
+            width: 100%;
+            
+
+            .tooltip_section_body{
+                @apply w-full;
+
+                .section_body_wrapper{
+                    @apply flex w-full;
+                    color: var(--primary-text);
+                    font-size: 1.4rem;
+                    font-family: OpenSans-medium;
+
+                    .body_item_wrapper{
+                        @apply w-full;
+                        margin-top: 24px;
+                        padding: 0 12px;
+                    }
+
+                    .body_item{
+                        @apply flex items-center w-full;
+                        padding: 8px;
+                        border-radius: var(--border-radius-img);
+                        cursor: pointer;
+
+                        .body_item_avt{
+                            border-radius: var(--border-radius-img);
+                        }
+
+                        .body_item_title{
+                            margin-bottom: 2px;
+                            padding-left: 16px;
+                        }
+
+                        &:hover{
+                            background-color: var(--primary-aside);
+                        }
+                    }
+
+                    
+                }
+            }
+
+            
+        }
+    }
+
+}

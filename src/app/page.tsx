@@ -1,11 +1,15 @@
+"use client";
 import { Sidebar } from "@/components/Sidebar";
-import { MainBody } from "@/components/MainBody";
+import { PageContent } from "@/components/PageContent";
+import { SearchBar } from "@/components/SearchBar";
+import React from "react";
 
 export default function Home() {
   return (
-      <div className="wrapper">
-        <Sidebar />
-        <MainBody />
-      </div>
-  )
+    <div className="wrapper">
+      <Sidebar />
+      <SearchBar />
+      <PageContent />
+    </div>
+  );
 }
