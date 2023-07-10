@@ -6,13 +6,31 @@
         margin-right: 24px !important;
     }
 
+    .sectionSlider_wrapper.small{
+        min-width: 128px;
+        max-width: 128px;
+    }
+
+    .sectionSlider_wrapper.medium{
+        min-width: 165px;
+        max-width: 165px;
+    }
+
+    .sectionSlider_wrapper.large{
+        min-width: 211.75px;
+        max-width: 211.75px;
+    }
+
+
+
     .sectionSlider_container{
-        @apply w-full flex flex-col;
+        @apply flex flex-col;
         position: relative;
         cursor: pointer;
-        width: fit-content;
+        width: auto;
+        
 
-        .sectionSlider_btn-play.btn-hover{
+        .sectionSlider_btn-play{
             position: absolute;
             top: 50%;
             left: 50%;
@@ -31,12 +49,12 @@
             opacity: 0;
         }
 
-        &:hover .sectionSlider_btn-play.btn-hover{
+        &:hover .sectionSlider_btn-play.hover{
             opacity: 0.8;
             transition: all .15s ease-in-out;
         }
 
-        .sectionSlider_btn-play.btn-hover:hover{
+        .sectionSlider_btn-play.hover:hover{
             opacity: 1;
             transition: all .15s ease-in-out;
         }
@@ -49,16 +67,25 @@
             position: absolute;
             display: flex;
             gap: 8px;
-
-            
+            border-radius: var(--border-radius-slider);
         }
 
-        &:hover .sectionSlider_heading.heading-hover{
+        &:hover .sectionSlider_heading.hover{
             background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0, #000 100%);
             transition: all .15s ease-in-out;
         }
 
-        &:hover .sectionSlider_heading-icon.icon-more.btn-hover{
+        .sectionSlider_heading-icon.icon-more {
+            position: relative;
+            display: flex;
+            flex-grow: 1;
+            font-size: 2.4rem;
+            color: var(--primary-text);
+            justify-content: flex-end;
+            opacity: 0;
+        }
+
+        &:hover .sectionSlider_heading-icon.icon-more.hover{
             opacity: 1;
             transition: all .15s ease-in-out;
         }
@@ -74,15 +101,25 @@
             }
         }
 
-        .sectionSlider_img_wrapper.img-circle{
-            @apply w-full flex justify-center;
+        .sectionSlider_img_wrapper.circle{
+            @apply flex justify-center;
 
+            .sectionSlider_img{
+                border-radius: 50%;
+            }
+        }
+
+        .sectionSlider_img_wrapper.small{
             .sectionSlider_img{
                 width: 128px;
                 height: 128px;
-                object-fit: fill;
-                border-radius: var(--border-radius-slider);
-                border-radius: 50%;
+            }
+        }
+
+        .sectionSlider_img_wrapper.large{
+            .sectionSlider_img{
+                width: 211.75px;
+                height: 125.48px;
             }
         }
 
@@ -108,8 +145,75 @@
             }
         }
 
-        .sectionSlider_title_wrapper.title-center{
+        .sectionSlider_title_wrapper.text_center{
             text-align: center;
+        }
+
+        .sectionSlider_playlist_content{
+            position: absolute;
+            width: 100%;
+            padding: 24px 16px 16px;
+            bottom: 0;
+            left: 0;
+            color: var(--primary-text);
+            background: linear-gradient(0deg, #000 0, rgba(0, 0, 0, 0) 100%);
+            border-radius: var(--border-radius-slider);
+
+            .playlist_title{
+                font-size: 1.6rem;
+                font-family: OpenSans-medium;
+            }
+
+            .playlist_subtitle{
+                font-size: 1.3rem;
+                font-family: OpenSans-medium;
+                white-space: nowrap;
+            }
+        }
+
+        .sectionSlider_card_content{
+            @apply w-full;
+            color: var(--primary-text);
+            margin-top: 16px;
+            padding: 0 8px;
+            word-wrap: break-word;
+            font-family: OpenSans-medium;
+
+            .card_title{
+                font-size: 1.6rem;
+                margin-bottom: 16px;
+            }
+
+            .card_subtitle{
+                @apply flex w-full;
+                font-size: 1.3rem;
+                color: var(--blur-text);
+                gap: 4px;
+
+                .card_subtitle-icon{
+                    font-size: 1.6rem;
+                }
+            }
+            
+            .card_action{
+                @apply flex items-center;
+
+                .card_btn{
+                    background-color: rgba(25, 110, 237, .1);
+                    color: var(--emphasize-color);
+                    font-size: 1.3rem;
+                    padding: 3px 11px;
+                    display: inline-flex;
+                    white-space: nowrap;
+                    border-radius: var(--border-radius-btn);
+                    border: 1px solid transparent;
+
+                    &:hover{
+                        border: 1px solid var(--emphasize-color);
+                    }
+                }
+            }
+
         }
     }
 }

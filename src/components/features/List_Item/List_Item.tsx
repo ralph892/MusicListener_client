@@ -1,22 +1,29 @@
-import { IAlbum } from "@/api/apiHandle";
+import { IAlbum, IMusic } from "@/api/apiHandle";
 import Image from "next/image";
 import React from "react";
 import { RiHeartLine, RiMoreFill, RiVipCrownFill } from "react-icons/ri";
 
 type Props = {
-  data: IAlbum;
+  data: IAlbum | IMusic;
+  num?: boolean;
+  small?: boolean;
 };
 
-const List_Item = ({ data }: Props) => {
+const List_Item = ({ data, num, small }: Props) => {
+  const myProps = {
+    num: num ? "num" : "",
+    small: small ? "small" : "",
+  };
+
   return (
-    <div className="list_item">
+    <div className={`list_item ${myProps.num} ${myProps.small}`}>
       <a className="list_item_image" href="#">
         <Image
           src={data.image}
           alt="album_avt"
           width={64}
           height={64}
-          className="item_image"
+          className={`item_image ${myProps.small}`}
         />
       </a>
       <div className="list_item_content">

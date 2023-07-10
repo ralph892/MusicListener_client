@@ -31,9 +31,41 @@ export interface IAlbum {
   type: string[];
 }
 
+export interface IPlayList {
+  id?: string;
+  name: string;
+  image: string;
+  songs: string[];
+  favorite: number;
+  rate: number;
+}
+
+export interface IEvent {
+  id?: string;
+  name: string;
+  image: string;
+  place: string;
+  information: string[];
+  description: string;
+  date: Date;
+  participants: number;
+}
+
 // user-defined type guards
 export function isMusic(object: any): object is IMusic {
   return (object as IMusic).singer !== undefined;
+}
+
+export function isArtist(object: any): object is IArtist {
+  return (object as IArtist).gender !== undefined;
+}
+
+export function isPlayList(object: any): object is IPlayList {
+  return (object as IPlayList).songs !== undefined;
+}
+
+export function isEvent(object: any): object is IEvent {
+  return (object as IEvent).place !== undefined;
 }
 
 export const handleGetMusicTrendings = async () => {
@@ -93,6 +125,24 @@ export const handleGetFeaturedArtists = async () => {
 export const handleGetTopAlbums = async () => {
   try {
     const response = await request.get("/topAlbums");
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const handleGetPlayLists = async () => {
+  try {
+    const response = await request.get("/playLists");
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const handleGetEvents = async () => {
+  try {
+    const response = await request.get("/events");
     return response;
   } catch (error) {
     console.log(error);

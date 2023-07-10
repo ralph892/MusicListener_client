@@ -1,6 +1,8 @@
 @layer components {
     .pageContent_wrapper{
         margin-left: var(--width-sidebar);
+        height: 100%;
+        
     }
 
     .pageContent_container{
@@ -132,8 +134,7 @@
             @apply w-full flex;
             flex-wrap: wrap;
 
-            .section_body.col-xl-6{
-                width: 50%;
+            .section_body.col-xl-6,.section_body.col-xl-5,.section_body.col-xl-1{
                 padding: 0 12px;
             }
         }
@@ -141,4 +142,40 @@
             counter-reset: list-order;
         }
     }
+
+    .section_body_container{
+        .songs_list_navbar_wrapper{
+            @apply w-full relative;
+            
+
+            .songs_list_navbar{
+                @apply flex;
+                color: var(--primary-text);
+                font-family: OpenSans-medium;
+                padding-top: 10px;
+
+                .navbar_item{
+                    padding: 8px;
+                    font-size: 1.4rem;
+                }
+                .navbar_item.active{
+                    color: var(--emphasize-color);
+                }
+            }
+
+            .songs_list_line{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                display: block;
+                height: 2px;
+                width: inherit;
+                background-color: #196eed;
+                -webkit-transition: all .35s ease-in-out;
+                transition: all .35s ease-in-out;
+            }
+        }
+    }
+
+
 }

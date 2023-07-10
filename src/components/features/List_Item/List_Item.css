@@ -11,6 +11,11 @@
             border-radius: var(--border-radius-img);
         }
 
+        .item_image.small{
+            width: 48px;
+            height: 48px;
+        }
+
         .list_item_content{
             @apply flex flex-col;
             margin-left: 16px;
@@ -46,7 +51,11 @@
         }
     }
 
-    .list_item::before{
+    .list_item.small{
+        height: 64px;
+    }
+
+    .list_item.num::before{
         counter-increment: list-order;
         content: counter(list-order);
         font-size: 1.6rem;

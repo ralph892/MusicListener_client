@@ -4,11 +4,13 @@
 
 @import '../components/Sidebar/Sidebar.css';
 @import '../components/SearchBar/SearchBar.css';
+@import '../components/Footer/Footer.css';
 @import '../components/PageContent/PageContent.css';
 @import '../components/features/SearchBar_Tooltip/SearchBar_Tooltip.css';
 @import '../components/features/SectionSlider/SectionSlider.css';
 @import '../components/features/Option_Tooltip/Option_Tooltip.css';
-@import "../components/features/List_Item/List_Item.css";
+@import '../components/features/List_Item/List_Item.css';
+@import '../components/Player/Player.css';
 
 :root {
   --primary-color: rgb(117, 81, 216);
@@ -77,6 +79,10 @@ body {
 @font-face {
   font-family: RobotoSlap-medium;
   src: url('/fonts/RobotoSlab-Medium.ttf');
+}
+
+.wrapper{
+  @apply w-full;
 }
 
 ::-webkit-scrollbar {
@@ -173,11 +179,36 @@ html:hover html::-webkit-scrollbar{
   color: var(--primary-text);
 }
 
-.sectionSlider_heading-icon.icon-more {
-  position: relative;
-  flex-grow: 1;
-  font-size: 2.4rem;
-  color: var(--primary-text);
-  justify-content: end;
-  opacity: 0;
+.d-block{
+  display: block;
+}
+
+.d-none{
+  display: none;
+}
+
+.col-xl-6{
+  width: 50%;
+}
+.col-xl-1{
+  width: 10%;
+}
+.col-xl-5{
+  width: 40%;
+}
+
+.mt20{
+  margin-top: 20px;
+}
+.mr24{
+  margin-right: 24px;
+}
+.ml24{
+  margin-left: 24px;
+}
+.ml8 {
+  margin-left: 8px;
+}
+.mb8 {
+  margin-bottom: 8px;
 }
